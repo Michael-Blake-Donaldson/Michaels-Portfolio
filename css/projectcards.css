@@ -14,228 +14,121 @@ body{
   color: var(--text-color);
 }
 
-/* This handles the spinning wheel of projects above the model */
-.banner{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
-.banner .slider{
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
-    z-index: 2;
-}
-@keyframes autoRun{
-    from{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
-    }
-}
+body {
+    /* solid background */
+    background: rgb(0,212,255);
+    
+    /* gradient background*/
+    background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1) 100%);    
+    
+    /* photo background */
+    background-image: url(https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80);
+    background-size: cover;
+    background-position: center;  
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    height: 100vh;  
+  }
 
-.banner .slider .item{
+  .author {
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Add space above and below */
+    font-size: 1.5rem; /* Adjust the font size */
+    color: rgba(255,255,255,0.85); /* Make sure it stands out */
+    max-width: 80%; /* Control the width */
+    font-family: 'Poppins', sans-serif; /* Ensure a clean font */
     position: absolute;
-    inset: 0 0 0 0;
-    transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(550px);
-}
-.banner .slider .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.banner .content{
-    position: absolute;
-    bottom: 0;
+    top: 16%; /* Position it near the top */
     left: 50%;
-    transform: translateX(-50%);
-    width: min(1400px, 100vw);
-    height: max-content;
-    padding-bottom: 100px;
+    transform: translateX(-50%); /* Center it horizontally */
+}
+  
+  /* Create a grid system to limit cards to 4 per row */
+.container {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);  
+    padding: 38px;  
+    filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    z-index: 1;
+    justify-content:center;
+    text-align: center;
+    margin: 20px; /* Add space between cards */
 }
-.banner .content h1{
-    font-size: 16em;
-    line-height: 1em;
-    color: #25283B;
-    position: relative;
+
+/* Create the grid system for multiple containers */
+.container-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    grid-gap: 30px; /* Space between cards */
+    margin: 50px auto;
+    width: 90%; /* Control the overall width of the container */
 }
-.banner .content h1::after{
-    position: absolute;
-    inset: 0 0 0 0;
-    content: attr(data-content);
-    z-index: 2;
-    -webkit-text-stroke: 2px #d2d2d2;
-    color: transparent;
-}
-.banner .content .author{
-    font-family: Poppins;
-    text-align: right;
-    max-width: 200px;
-}
-.banner .content h2{
-    font-size: 3em;
-}
-.banner .content .model{
-    background-image: url(pics/noise.mp4);
+
+  .banner-image {
+    background-position: center;
+    background-size: cover;
+    height: 300px;
     width: 100%;
-    height: 75vh;
-    position: absolute;
-    scale: 125%;
-    bottom: 0;
-    left: 0;
-    margin-bottom: 8rem;
-    background-size: auto 130%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    z-index: 1;
-}
-@media screen and (max-width: 1023px) {
-    .banner .slider{
-        width: 160px;
-        height: 200px;
-        left: calc(50% - 80px);
-    }
-    .banner .slider .item{
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(300px);
-    }
-    .banner .content h1{
-        text-align: center;
-        width: 100%;
-        text-shadow: 0 10px 20px #000;
-        font-size: 7em;
-    }
-    .banner .content .author{
-        color: #fff;
-        padding: 20px;
-        text-shadow: 0 10px 20px #000;
-        z-index: 2;
-        max-width: unset;
-        width: 100%;
-        text-align: center;
-        padding: 0 30px;
-    }
-}
-@media screen and (max-width: 767px) {
-    .banner .slider{
-        width: 100px;
-        height: 150px;
-        left: calc(50% - 50px);
-    }
-    .banner .slider .item{
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(180px);
-    }
-    .banner .content h1{
-        font-size: 5em;
-    }
-}
-
-/* Handles all individual project infos*/
-
-.card-container {
-    display: flex;
-    justify-content: space-around; /* or use space-between */
-    align-items: center;
-    flex-wrap: wrap; /* allows wrapping to new line if there's not enough space */
-    margin: 0 auto;
-  }
-
-
-.card {
-    position: relative;
-    width: 400px;
-    height: 500px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
-    margin: 1rem 2rem 3rem;
-    box-shadow: 0 0 0 5px var(--main-color);
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255, 0.255)
   }
   
-  .card__image {
-    width: 400px;
-    height: 500px;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  h1{
+    font-family: 'Righteous', sans-serif;
+    color: rgba(255,255,255,0.98);
+    text-transform: uppercase;
+    font-size: 2.4rem;
   }
   
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  p {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 150%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
   
-  .card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f2f2f2;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  .button-wrapper{
+    margin-top: 18px;
   }
   
-  .card:hover .card__content {
-    transform: rotateX(0deg);
+  .btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;  
+    letter-spacing: 2px;  
+    cursor: pointer;
   }
   
-  .card__title {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-    font-weight: 700;
+  .btn + .btn {
+    margin-left: 10px;
   }
   
-  .card:hover .card__image {
-    scale: 0;
+  .fill {
+    background: rgba(0, 212, 255, 0.9);
+    color: rgba(255,255,255,0.95);
+    filter: drop-shadow(0);
+    font-weight: bold;
+    transition: all .3s ease; 
   }
   
-  .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
+  .fill:hover{
+    transform: scale(1.125);  
+    border-color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+    transition: all .3s ease;    
   }
-
-
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 125px; /* Adjust as necessary */
-}
-
-.circle-video {
-    width: 300px; /* Adjust the size as necessary */
-    height: 300px; /* Ensure the width and height are equal for a perfect circle */
-    border-radius: 50%;
-    object-fit: cover; /* This ensures the video covers the area without stretching */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow effect */
-}
 
 #particles-js {
     position: absolute;

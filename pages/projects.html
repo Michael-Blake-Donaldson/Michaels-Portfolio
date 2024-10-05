@@ -17,15 +17,6 @@
         <i class='bx bxs-data' id="menu-icon"></i>
     </header>
 
-    <!-- Creating the spinning projects -->
-    <div class="banner">
-        <div class="slider" style="--quantity: 4">
-            <div class="item" style="--position: 1"><img src="pics/AS.webp" alt=""></div>
-            <div class="item" style="--position: 2"><img src="pics/DRASTIClogo.png" alt=""></div>
-            <div class="item" style="--position: 3"><img src="pics/mimevoiceapp.png" alt=""></div>
-            <div class="item" style="--position: 4"><img src="pics/penguincolorcode.png" alt=""></div>
-            
-        </div>
         <div class="content">
             
             <!-- Favorite Qoute off to side of spinning banner -->
@@ -35,98 +26,24 @@
                     "You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity.” – John Romero
                 </p>
             </div>
-            <div class="model">
-              <!-- Video Masked in a Circle -->
-              <div class="video-container">
-                  <video class="circle-video" autoplay muted loop>
-                      <source src="/pics/noise.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                  </video>
-              </div>
-          </div>
       </div>
-  </div>
-        </div>
-    </div>
+ 
     <div id="particles-js"></div>
-
-    <!-- List of projects in detail with info and image -->
-
-    <div class="card-container">
-        <div class="card">
-            <img src="pics/AS.webp" alt="Card Image" class="card__image">
-           <div class="card__content">
-             <p class="card__title">ASTRA - Aerospace Simulator</p>
-             <p class="card__description">
-                The Aerospace Simulation Software is a Java-based application that simulates the dynamics of aerospace vehicles. 
-                It provides a graphical user interface (GUI) using JavaFX to visualize the movement and parameters of the vehicles in real-time.
-                <br>
-                Add multiple aerospace vehicles with custom parameters.
-                Simulate the dynamics of the vehicles including velocity and altitude changes.
-                Real-time graphical visualization of the vehicle's movements.
-                Controls to start, stop, reset, speed up, and slow down the simulation.
-                <br>
-                Java
-                JavaFX
-                <br>
-                Java Development Kit (JDK) 11 or higher
-                JavaFX SDK</p>
-           </div>
-         </div>
-        <div class="card">
-            <img src="pics/DRASTIClogo.png" alt="Card Image" class="card__image">
-           <div class="card__content">
-             <p class="card__title">DRASTIC - Distater Relief AI</p>
-             <p class="card__description">
-                Drastic is a AI that helps with calculating the needs for Goods, transport, and personnel needed for rescue/disaster situations. 
-                It is designed to calculate if the disaster relief will be a success or failure. 
-                <br> <br>
-                Drastic handles calculations for 3 main catagories. <br>
-                Goods : Food / Goods / Items / Medicine <br>
-                Personnel : Volunteers / Doctors / Engineers / etc <br>
-                Transportation : Type / Cost / Carry-Capacity / # of type of vehicle <br> <br>
-
-                Drastic allows for a user to input various data for calculations. <br>
-                Name of disaster <br>
-                # of people effected (This may include injured, loss of power, loss of home, etc) <br>
-                location of disaster (using google API for narowing down specific towns/cities) <br>
-                # of days known and or expected for disaster to effect population <br> <br>
-                </p>
-           </div>
+    
+    <!-- Project Cards -->
+    <div class="container-wrapper">
+        <!-- Repeat this container for each project -->
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
         </div>
-        <div class="card">
-            <img src="pics/mimevoiceapp.png" alt="Card Image" class="card__image">
-           <div class="card__content">
-             <p class="card__title">MIME - Voice Assistant</p>
-             <p class="card__description">
-                Mime voice assistant is a replication of Siri/Alexa. <br> <br>
-                Mime allows for a user to give audio input and recieve audio output. <br>
-                The user can ask various questions regarding weather, interent search results, etc. <br> <br>
-                This program was designed using Python and various Python libraries that help create a chat model. <br> <br>
-                With simple changes to its training model and base requests, this program can be adapted to various industries as a helpful chat tool, as well as be used in a team setting to help with workflow. <br>
-                I aim to improve its voice model to be more friendly. Additionally, I would want to create a higher sense of relationship between the program and its user to provide more meaninful and personal answers.
-
-             </p>
-           </div>
-         </div>
-        <div class="card">
-            <img src="pics/penguincolorcode.png" alt="Card Image" class="card__image">
-           <div class="card__content">
-             <p class="card__title">ColorNest - Color Code Manager</p>
-             <p class="card__description">
-                This program allows a user to store color codes and create color code templates that they can save for later use.
-                <br>
-                It runs with a C++ Backend and a Html, CSS, Javascript Frontend. This program tested my abilities by introducing new libraries and build structure. 
-                It also allowed for learning more about blending multiple languages to create a program. 
-                XAML files are new to me so that was a new stepping stone in the progression of this program.
-                <br>
-                This Color Code Manager program can be adapted for use by multiple industries such as Graphic Design, Artists, Makeup Artists, Interior Designers, etc. 
-                I would want to continue to improve the UI/UX of the program to be easier and cleaner for the user. 
-                This personal project was a learning curve with the blend of languages and was a fun challenge!
-             </p>
-           </div>
-        </div>
-
-
+        <!-- Add more containers, each will automatically fit into the grid -->
+    </div>
 </body>
 </html>
