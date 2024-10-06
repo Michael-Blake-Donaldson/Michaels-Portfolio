@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/projectcards.css">
     <script src="/javascript/script.js"></script>
-    <script src="/javascript/projects.js"></script>
+    <script src="/javascript/Projects.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
@@ -17,25 +17,37 @@
         <i class='bx bxs-data' id="menu-icon"></i>
     </header>
 
-        <div class="content">
-            
-            <!-- Favorite Qoute off to side of spinning banner -->
-            <div class="author">
-               <br>
-                <p>
-                    "You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity.” – John Romero
-                </p>
-            </div>
-      </div>
- 
-    <div id="particles-js"></div>
+    <div class="bg-codingimage"> </div>
+
+       <!-- Ensure the quote is placed below the header but above the project cards -->
+    <div class="content">
+        <div class="author">
+            <p>
+                "You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity.” – John Romero
+            </p>
+        </div>
+    </div>
     
     <!-- Project Cards -->
+    <!-- Project Cards below the quote -->
     <div class="container-wrapper">
         <!-- Repeat this container for each project -->
         <div class="container">
             <div class="wrapper">
-                <div class="banner-image"></div>
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/WLB.webp);"></div>
+                <h1>Warlock AI</h1>
+                <p>Machine Learning AI that learns and assist in combat zones.</p>
+            </div>
+            <div class="button-wrapper" >
+                <button class="btn fill" 
+                data-description = "Developed with Python. Utilized libraries such as PyTorch and Scikit-Learn for NLP and Machine Learning.">
+                    Learn More</button>
+            </div>
+        </div>
+        <!-- Repeat the container div for other cards as needed -->
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/AS.webp);"></div>
                 <h1>Toyota Supra</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
@@ -43,7 +55,68 @@
                 <button class="btn fill">Learn More</button>
             </div>
         </div>
-        <!-- Add more containers, each will automatically fit into the grid -->
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/ZombieScreenshot.png);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/DRASTIClogo.png);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/HabitTrackerScreenshot.png);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/GGameScreenshot.jpeg);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/BudgetBee.png);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="banner-image" style="background-image: url(/pics/ProjectLogos/mimevoiceapp.png);"></div>
+                <h1>Toyota Supra</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="button-wrapper">
+                <button class="btn fill">Learn More</button>
+            </div>
+        </div>
     </div>
+
+    <div id="particles-js"></div>
 </body>
 </html>
