@@ -44,3 +44,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   };
 });
+
+const tooltips = document.querySelectorAll('.tooltip-item');
+  const originalInfo = document.getElementById('original-info');
+  const workInfo = document.getElementById('work-info');
+  const educationInfo = document.getElementById('education-info');
+  const hobbiesInfo = document.getElementById('hobbies-info');
+
+  let activeButton = null; // Track the currently active button
+
+  tooltips.forEach((tooltip) => {
+      tooltip.addEventListener('click', function () {
+          const selectedInfo = tooltip.getAttribute('data-info');
+          const isAlreadyActive = tooltip === activeButton; // Check if the clicked button is already active
+
+          // Reset all sections
+          originalInfo.style.display = 'none';
+          workInfo.style.display = 'none';
+          educationInfo.style.display = 'none';
+          hobbiesInfo.style.display = 'none';
+
+          // Reset all buttons
+          tooltips.forEach((btn) => {
+              btn.classList.remove('active');
+          });
+
+          if (isAlreadyActive) {
+              // If the same button is clicked again, go back to the original state
+              originalInfo.style.display = 'block';
+              activeButton = null; // Reset the active button
+          } else {
+              // Show the corresponding info section and activate the button
+              tooltip.classList.add('active');
+              if (selectedInfo === 'work') {
+                  workInfo.style.display = 'block';
+              } else if (selectedInfo === 'education') {
+                  educationInfo.style.display = 'block';
+              } else if (selectedInfo === 'hobbies') {
+                  hobbiesInfo.style.display = 'block';
+              }
+
+              // Set the current button as active
+              activeButton = tooltip;
+          }
+      });
+  });
+

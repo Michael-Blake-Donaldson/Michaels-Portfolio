@@ -6,6 +6,7 @@
     <title>Michael's Portfolio</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/skillrows.css">
+    <link rel="stylesheet" href="/css/aboutsection.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to boxicons for the icons used across webpage-->
     
 </head>
@@ -26,7 +27,7 @@
     </header>
 
     <!-- Lightbox for the HIRE button that presents an email input field and my phone number -->
-    <div id="hire-lightbox" class="hire-lightbox" style="display: none;">
+    <div id="hire-lightbox" class="hire-lightbox" data-trigger="hire-lightbox" style="display: none;">
       <div class="hire-lightbox-content">
           <span class="close">&times;</span>
           <div class="hire-info">
@@ -91,6 +92,79 @@
               <div class="itemRight item8"><i class='bx bxs-server' ></i></div>
             </div>
           </body>
+
+          <section class="about-section">
+            <div class="tooltip-menu">
+                <div class="tooltip-item" data-info="work">Work</div>
+                <div class="tooltip-item" data-info="education">Education</div>
+                <div class="tooltip-item" data-info="hobbies">Hobbies</div>
+            </div>
+        
+            <!-- Original content, displayed by default -->
+            <div class="about-content">
+                <div class="about-info" id="original-info">
+                    <h2>About Me!</h2>
+                    <p>I am an aspiring software engineer with a passion for learning and innovation. 
+                      My journey into software development has been fueled by both self-taught exploration and academic pursuits, 
+                      allowing me to quickly grasp new concepts and technologies. As someone who is constantly seeking to grow and challenge myself, 
+                      I thrive in environments that push me to expand my knowledge and problem-solving abilities.</p>
+                </div>
+                <div class="about-info" id="work-info" style="display:none;">
+                  <h2>Work Experience</h2>
+
+<!-- Fullstack Software Engineer Intern -->
+<h3>Fullstack Software Engineer Intern</h3>
+<p>
+    Developed and maintained Java-based applications to streamline internal processes and client management. 
+    Collaborated with cross-functional teams to identify and resolve software bugs. 
+    Assisted in designing and implementing RESTful APIs to improve system integration. Contributed to code reviews, ensuring adherence to best practices and coding standards.
+</p>
+
+<!-- Event Manager Role -->
+<h3>Event Manager, Disney ESPN</h3>
+<p>
+    Managed large-scale events, ensuring smooth execution and handling logistical challenges. 
+    Coordinated with various departments to plan and implement event strategies. 
+    Improved overall event efficiency by introducing new scheduling and tracking tools. Fostered strong client relationships to ensure continued satisfaction and success of events.
+</p>
+
+<!-- General Manager Role -->
+<h3>General Manager, Arbys</h3>
+<p>
+    Led day-to-day operations of the restaurant, including staff management, budgeting, and customer service. 
+    Implemented new systems to streamline workflow, improving efficiency by 20%. Trained and mentored staff, leading to improved customer satisfaction and staff retention. 
+    Oversaw inventory and vendor relations, ensuring optimal supply levels.
+</p>
+
+                </div>
+                <div class="about-info" id="education-info" style="display:none;">
+                    <h2>Southern New Hampshire University</h2>
+                    <p>Computer Science with a focus in Software Engineering</p>
+                    <p>3.8+ GPA with honors</p>
+                    <br>
+                    <h2>Rockwall Highschool</h2>
+                    <p>Highschool Diploma</p>
+                    <p>Focused on classes relating to Computer Science, Marketing, and Management</p>
+                </div>
+                <div class="about-info" id="hobbies-info" style="display:none;">
+                    <h2>History Fanatic</h2>
+                    <p>I am a Historian at heart. I love learning aobut world history and evolving my way of thinking. It is exciting to 
+                      learn about the rise and falls, the revolutions and setbacks, and the timeline of human existance. Learning about different cultures and religions
+                      gives me a chance to appreciate art, music, stories and more.
+                    </p>
+                    <br>
+                    <h2>Football</h2>
+                    <p>As I may not be as athletic as I once was, American Football continues to be a staple every weekend. 
+                    </p>
+                    <br>
+                    <h2>Animals</h2>
+                    <p>E.T, my african tortoise is a good example of my dedication to patience. My cat, Pretty Princess (Don't make fun of me...) is my little buddy when 
+                      sitting here frustrated with code, school, work and more.  
+                    </p>
+                </div>
+            </div>
+        </section>
+        
           
           <footer>
             <h3>Made by Michael Blake Donaldson  @2024</h3>
