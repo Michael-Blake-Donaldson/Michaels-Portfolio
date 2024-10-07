@@ -115,8 +115,7 @@ body::before {
     border: none;
     padding: 12px 24px;
     border-radius: 24px;
-    font-size: 12px;
-    font-size: 0.8rem;  
+    font-size: 1rem;  
     letter-spacing: 2px;  
     cursor: pointer;
   }
@@ -126,7 +125,7 @@ body::before {
   }
   
   .fill {
-    background: rgba(0, 212, 255, 0.9);
+    background: #062b35;
     color: rgba(255,255,255,0.95);
     filter: drop-shadow(0);
     font-weight: bold;
@@ -135,7 +134,7 @@ body::before {
   
   .fill:hover{
     transform: scale(1.125);  
-    border-color: rgba(255, 255, 255, 0.9);
+    border-color: #b3d8de;
     filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
     transition: all .3s ease;    
   }
