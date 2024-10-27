@@ -89,4 +89,3 @@ const tooltips = document.querySelectorAll('.tooltip-item');
           }
       });
   });
-
