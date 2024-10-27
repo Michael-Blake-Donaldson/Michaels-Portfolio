@@ -63,3 +63,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   
+  //Falling ball physics
+  document.addEventListener('DOMContentLoaded', function () {
+    const { Engine, Render, Runner, Bodies, Composite } = Matter;
+
+    // Create an engine
+    const engine = Engine.create();
+    const { world } = engine;
+
+    // Create a renderer with initial wireframe setting
+    const render = Render.create({
+        element: document.body,
+        engine: engine,
+        options: {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            wireframes: false, // Start with wireframe off
+            background: 'transparent'
+        }
+    });
+    Render.run(render);
+
+    // Create runner
+    const runner = Runner.create();
+    Runner.run(runner, engine);
+
+    // Create static bodies for each project card
+    const projectCards = document.querySelectorAll('.container');
+    projectCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const cardBody = Bodies.rectangle(rect.left + rect.width / 2, rect.top + rect.height / 2, rect.width, rect.height, { isStatic: true });
+        Composite.add(world, cardBody);
+    });
+
+    // Get the spawn area position
+    const spawnArea = document.getElementById('spawn-area');
+    const spawnRect = spawnArea.getBoundingClientRect();
+
+    // Function to create a ball at the top
+    function createBall(x) {
+        const ball = Bodies.circle(x, spawnRect.top, 20, { 
+            restitution: 0.7, // Bounciness
+            render: {
+                fillStyle: '#ff7f50'
+            }
+        });
+        Composite.add(world, ball);
+    }
+
+    // Generate balls at intervals
+    setInterval(() => {
+        const x = Math.random() * window.innerWidth;
+        createBall(x); 
+    }, 1000);
+
+    // Add toggle functionality for wireframe
+    const wireframeToggle = document.getElementById('wireframe-toggle');
+    wireframeToggle.addEventListener('click', () => {
+        render.options.wireframes = !render.options.wireframes; // Toggle wireframe
+        Render.run(render); // Re-render with new settings
+    });
+
+    // Update physics engine on resize to adjust card positions
+    window.addEventListener('resize', () => {
+        Render.lookAt(render, {
+            min: { x: 0, y: 0 },
+            max: { x: window.innerWidth, y: window.innerHeight }
+        });
+    });
+});
+
+
+
+

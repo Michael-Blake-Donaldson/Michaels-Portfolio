@@ -200,3 +200,36 @@ body::before {
 .fade-in.show {
   opacity: 1;
 }
+
+#spawn-area {
+  position: absolute;
+  top: 0; /* Set this to 0 to place it right at the top */
+  left: 0;
+  width: 100%;
+  height: 1px;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#wireframe-toggle {
+  padding: 10px 20px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 90rem;
+}
+
+#wireframe-toggle:hover {
+  background-color: var(--bg-color);
+}

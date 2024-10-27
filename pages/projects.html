@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/projectcards.css">
     <script src="/javascript/script.js"></script>
     <script src="/javascript/Projects.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -19,7 +19,9 @@
 
     <div class="bg-codingimage"> </div>
 
-       <!-- Ensure the quote is placed below the header but above the project cards -->
+    <!--Spawning area for falling physics balls-->
+    <div id="spawn-area"></div>
+
     <div class="content">
         <div class="author">
             <p>
@@ -244,6 +246,10 @@
                     Learn More</button>
             </div>
         </div>
+    </div>
+
+    <div class="toggle-container">
+        <button id="wireframe-toggle">WIREFRAME</button>
     </div>
 
     <div id="particles-js"></div>
